@@ -14,10 +14,13 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 
-			$username = stripslashes($db, $username);
-			$password= stripslashes($db, $password);
-			$username = mysqli_real_escape_string($db, $username);
-			$password = mysqli_real_escape_string($db, $password);
+			{
+				$username = stripslashes($db, $username);
+				$password= stripslashes($db, $password);
+				$username = mysqli_real_escape_string($db, $username);
+				$password = mysqli_real_escape_string($db, $password);
+				//$password = md5($password);
+			}
 			
 			//Check username and password from database
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
