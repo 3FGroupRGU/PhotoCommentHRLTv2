@@ -14,7 +14,10 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 
-
+			$username = stripslashes($db, $username);
+			$password= stripslashes($db, $password);
+			$username = mysqli_real_escape_string($db, $username);
+			$password = mysqli_real_escape_string($db, $password);
 			
 			//Check username and password from database
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
@@ -23,6 +26,8 @@
 			
 			//If username and password exist in our database then create a session.
 			//Otherwise echo error.
+
+
 			
 			if(mysqli_num_rows($result) == 1)
 			{
