@@ -1,7 +1,8 @@
 .formbox
 {
 	width:80%;
-	border:3px solid rgba(81, 81, 81, 0.93);
+	border:3px solid;
+	border-color: #bf6900;
 	border-radius:10px;	
 	padding: 10px 40px 25px;
 }
@@ -14,13 +15,14 @@
 }
 .formbox h3
 {
-	background-color:rgba(81, 81, 81, 0.93);
-	color:#FFF;
+	background-color: #bf6900;
+	color: #7d0000;
 	text-align:center;
 	padding:15px;
 	border-radius: 10px 10px 0 0;
 	margin: -10px -40px;
-	border-bottom:1px solid #999;
+	border-bottom:1px solid;
+	border-color: darkgoldenrod;
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size:24px;
 	font-weight:bold;
@@ -48,11 +50,11 @@ label
 }
 input[type=submit]
 {
-	background-color: #63C;
+	background-color: #bf6900;
 	width:300px;
 	border:0;
 	padding:10px;
-	color:#FFF;
+	color: #7d0000;
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size:20px;
 	border-radius:5px;
@@ -61,7 +63,7 @@ input[type=submit]
 }
 .error
 {
-	color:red;
+	color:antiquewhite;
 	margin-top:10px;
 	font-size:18px;
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
@@ -76,7 +78,7 @@ body
 	margin: auto;
 	width:80%;
 	padding: 0;
-	background-color: #e3e3e3;
+	background-color: goldenrod;
 }
 .top-bar
 {
