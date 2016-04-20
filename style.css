@@ -17,7 +17,7 @@
 .formbox h3
 {
 	background-color: coral;
-	color:#FFF;
+	color: firebrick;
 	text-align:center;
 	padding:15px;
 	border-radius: 10px 10px 0 0;
@@ -50,11 +50,11 @@ label
 }
 input[type=submit]
 {
-	background-color: #63C;
+	background-color: firebrick;
 	width:300px;
 	border:0;
 	padding:10px;
-	color:#FFF;
+	color: coral;
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size:20px;
 	border-radius:5px;
@@ -78,7 +78,7 @@ body
 	margin: auto;
 	width:80%;
 	padding: 0;
-	background-color: #e3e3e3;
+	background-color: #e99b8f;
 }
 .top-bar
 {
