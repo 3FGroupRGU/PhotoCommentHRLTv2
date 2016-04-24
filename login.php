@@ -14,15 +14,15 @@
 			$password = $_POST['password'];
 		}
 			//validating information inserted in the above field matches what is expected in username field
-		{
-			if (isset($_POST['username']))
-				$username = stripslashes(trim($_POST['username']));
-		}
+		//{
+		//	if (isset($_POST['username']))
+		//		$username = stripslashes(trim($_POST['username']));
+		//}
 			//validating information inserted in above field matches what is expected in password field
-		{
-			if(isset($_POST['password']))
-			$password = stripslashes(trim($_POST['password']));
-		}
+		//{
+			//if(isset($_POST['password']))
+			//$password = stripslashes(trim($_POST['password']));
+		//}
 		
 			//Check username and password from database
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";

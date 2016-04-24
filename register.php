@@ -23,22 +23,22 @@
 			<input type="text" name="username" placeholder="username" required/><br><br>
 			<!-- validating input into text field is as expected-->
 			<?php
-			if (isset($_POST['username']))
-			$username = stripslashes(trim($_POST['username']));
+			//if (isset($_POST['username']))
+			//$username = stripslashes(trim($_POST['username']));
 			?>
 			<label>Email:</label><br>
 			<input type="email" name="email" placeholder="email" required />  <br><br>
 			<!-- validate email address formatting is a valid construction-->
 			<?php
-			if(isset($_POST['email']))
-			$email = trim($_POST['email']);
+			//if(isset($_POST['email']))
+			//$email = trim($_POST['email']);
 			?>
 			<label>Password:</label><br>
 			<input type="password" name="password" placeholder="password" required/>  <br><br>
 			<!-- validate that password construction is a format required-->
 			<?php
-			if(isset($_POST['password']))
-				$password = stripslashes(trim($_POST['password']));
+			//if(isset($_POST['password']))
+			//	$password = stripslashes(trim($_POST['password']));
 			?>
 			<input type="submit" name="submit" value="Register!" />
 		</form>
