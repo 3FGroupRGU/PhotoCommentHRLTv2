@@ -42,8 +42,6 @@
 			{
 				$error = "Incorrect username or password.";
 			}
-
-		}
 	}
 
 ?>
