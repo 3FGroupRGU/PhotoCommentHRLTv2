@@ -17,13 +17,11 @@
 		{
 			if (isset($_POST['username']))
 				$username = stripslashes(trim($_POST['username']));
-				$username = strip_tags(trim($_POST['username']));
 		}
 			//validating information inserted in above field matches what is expected in password field
 		{
 			if(isset($_POST['password']))
 			$password = stripslashes(trim($_POST['password']));
-			$username = strip_tags(trim($_POST['password']));
 		}
 		
 			//Check username and password from database

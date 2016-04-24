@@ -25,14 +25,13 @@
 			<?php
 			if (isset($_POST['username']))
 			$username = stripslashes(trim($_POST['username']));
-			$username = strip_tags(trim($_POST['username']));
 			?>
 			<label>Email:</label><br>
 			<input type="email" name="email" placeholder="email" required />  <br><br>
 			<!-- validate email address formatting is a valid construction-->
 			<?php
-			if(preg_match('/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/',($_POST['email'])))
-			$emailAddress = trim($_POST['email']);
+			if(isset($_POST['email']))
+			$email = trim($_POST['email']);
 			?>
 			<label>Password:</label><br>
 			<input type="password" name="password" placeholder="password" required/>  <br><br>
@@ -40,7 +39,6 @@
 			<?php
 			if(isset($_POST['password']))
 				$password = stripslashes(trim($_POST['password']));
-				$username = strip_tags(trim($_POST['password']));
 			?>
 			<input type="submit" name="submit" value="Register!" />
 		</form>
