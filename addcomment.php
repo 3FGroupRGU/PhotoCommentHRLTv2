@@ -21,6 +21,10 @@ if(isset($_POST["submit"]))
         if ($query) {
             $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
         }
+        function xssafe($desc, $encoding='UTF-8')
+        {
+            return htmlspecialchar($desc, ENT_QUOTES | ENT_HTML401, $encoding);
+        }
     }
     else{
         $msg = "You need to login first";

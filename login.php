@@ -1,5 +1,15 @@
 <?php
 	session_start();
+	$IP=getenv("REMOTE_ADDR");
+	SESSION_['IP']=$IP;
+	if($_SESSION['timeout']+60<time()){
+		//session timed out
+		session.destroy();
+		header("Location: login.php");
+	} else {
+		$_SESSION['timeout']=time();
+		//session ok reset time
+	}
 	include("connection.php"); //Establishing connection with our database
 	
 	$error = ""; //Variable for storing our errors.
@@ -14,8 +24,11 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 
+			$clean_username=mysqli_real_escape_string ($db, $username);
+			$clean_password=mysqli_real_escape_string ($db, $password);
+
 			//Check username and password from database
-			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
+			$sql="SELECT userID FROM users WHERE username='$clean_username' and password='$clean_password'";
 			$result=mysqli_query($db,$sql);
 			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 			

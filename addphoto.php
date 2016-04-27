@@ -14,6 +14,29 @@ if(isset($_POST["submit"]))
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     $uploadOk = 1;
+    //check if file alrrady exists
+    if (file_exists($target_file)){
+        echo "Sorry, file already exists.";
+        $upload=0;
+    }
+    //verify that file to be uploaded is an image 
+    if (isset($_POST["submit"])){
+        $check=getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check!==false){
+            echo "File is an image-" .$check["mime"].".";
+            $uploadOK=1;
+            }else{
+            echo "File is not an image.";
+            $uploadOK=0;
+        }
+        if($imageFileType!="jpg"&&
+            $imageFileType!="png"&&
+            $imageFileType!="jpeg"&&
+            $imageFileType!="gif")
+        {echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOK=0;
+        }
+    }
 
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
