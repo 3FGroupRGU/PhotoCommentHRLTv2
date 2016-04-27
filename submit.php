@@ -10,7 +10,7 @@ if(isset($_POST["submit"]))
     $clean_password=mysqli_real_escape_string ($db, $password);
     $clean_email=mysqli_real_escape_string ($db, $email);
 
-    $sql="SELECT email FROM users WHERE email='$email'";
+    $sql="SELECT email FROM users WHERE email='$clean_email'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
     if(mysqli_num_rows($result) == 1)
