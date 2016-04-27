@@ -10,6 +10,11 @@ if(isset($_POST["submit"]))
     $photoID = $_POST["photoID"];
     $name = $_SESSION["username"];
 
+    function xssafe($desc, $encoding='UTF-8')
+    {
+        return htmlspecialchar($desc, ENT_QUOTES | ENT_HTML401, $encoding);
+    }
+
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -21,10 +26,7 @@ if(isset($_POST["submit"]))
         if ($query) {
             $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
         }
-        function xssafe($desc, $encoding='UTF-8')
-        {
-            return htmlspecialchar($desc, ENT_QUOTES | ENT_HTML401, $encoding);
-        }
+
     }
     else{
         $msg = "You need to login first";

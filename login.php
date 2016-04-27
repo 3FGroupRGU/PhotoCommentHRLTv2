@@ -28,7 +28,7 @@
 			
 			if(mysqli_num_rows($result) == 1)
 			{
-				$_SESSION['username'] = $username; // Initializing Session
+				$_SESSION['username'] = $clean_username; // Initializing Session
 				header("location: photos.php"); // Redirecting To Other Page
 			}else
 			{
