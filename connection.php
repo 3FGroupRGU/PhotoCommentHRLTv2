@@ -7,6 +7,5 @@ $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 if ($db->connect_error){
     die("Connection failed:".$db->connect_error);
 }
-$stmt=$db->prepare("INSERT INTO MyGuests (username, email)VALUES(?,?)");
-$stmnt->bind_param("sss", $username,$email);
+
 ?>

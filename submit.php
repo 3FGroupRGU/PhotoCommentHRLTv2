@@ -6,9 +6,9 @@ if(isset($_POST["submit"]))
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $username=mysqli_real_escape_string ($db, $name);
-    $password=mysqli_real_escape_string ($db, $password);
-    $email=mysqli_real_escape_string ($db, $email);
+    $clean_username=mysqli_real_escape_string ($db, $name);
+    $clean_password=mysqli_real_escape_string ($db, $password);
+    $clean_email=mysqli_real_escape_string ($db, $email);
 
     $sql="SELECT email FROM users WHERE email='$email'";
     $result=mysqli_query($db,$sql);
@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
     else
     {
         //echo $name." ".$email." ".$password;
-        $query = mysqli_query($db, "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')")or die(mysqli_error($db));
+        $query = mysqli_query($db, "INSERT INTO users (username, email, password) VALUES ('$clean_username', '$clean_email', '$clean_password')")or die(mysqli_error($db));
         if($query)
         {
             $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
