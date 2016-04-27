@@ -1,15 +1,6 @@
 <?php
 	session_start();
-	$IP=getenv("REMOTE_ADDR");
-	SESSION_['IP']=$IP;
-	if($_SESSION['timeout']+60<time()){
-		//session timed out
-		session.destroy();
-		header("Location: login.php");
-	} else {
-		$_SESSION['timeout']=time();
-		//session ok reset time
-	}
+	
 	include("connection.php"); //Establishing connection with our database
 	
 	$error = ""; //Variable for storing our errors.
