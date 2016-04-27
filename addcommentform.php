@@ -24,6 +24,11 @@ include("addcomment.php");
        <?php
         if (isset($_POST['desc']))
         $desc=htmlentities(trim($_POST['desc']), ENT_NOQUOTES);
+       function clean($string) {
+           $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+           return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+       }
         //check string length in comment box
         if (strlen($_POST['desc'])<=256)
        $desc=htmlentities(trim($_POST['desc']), ENT_NOQUOTES);
@@ -34,6 +39,11 @@ include("addcomment.php");
         <?php
         if (isset($_POST['photoID']))
         $photoID=htmlentities(trim($_POST['photoID']), ENT_NOQUOTES);
+        function clean($string) {
+            $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+            return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+        }
         ?>
         <input type="submit" name="submit" value="Submit Comment" />
     </form>
