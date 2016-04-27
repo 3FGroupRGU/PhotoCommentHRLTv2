@@ -20,31 +20,8 @@ include("addcomment.php");
     <form method="post" action="">
         <label>Comment:</label><br>
         <textarea name="desc" cols="40" rows="5"  ></textarea><br><br>
-        <!-- conversion of html tags-->
-       <?php
-        if (isset($_POST['desc']))
-        $desc=htmlentities(trim($_POST['desc']), ENT_NOQUOTES);
-       function clean($string) {
-           $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
-           return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-       }
-        //check string length in comment box
-        if (strlen($_POST['desc'])<=256)
-       $desc=htmlentities(trim($_POST['desc']), ENT_NOQUOTES);
-        ?>
         <label>Photo:</label>
         <input type="text" name="photoID" value="<?php echo $_GET['id'] ?>" /><br><br>
-        <!-- validating that no excess code has been added to the Photo name box -->
-        <?php
-        if (isset($_POST['photoID']))
-        $photoID=htmlentities(trim($_POST['photoID']), ENT_NOQUOTES);
-        function clean($string) {
-            $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
-            return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-        }
-        ?>
         <input type="submit" name="submit" value="Submit Comment" />
     </form>
     <div class="msg"><?php echo $msg;?></div>

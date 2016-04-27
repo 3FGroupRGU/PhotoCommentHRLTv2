@@ -21,38 +21,10 @@
 		<form method="post" action="">
 			<label>Username:</label><br>
 			<input type="text" name="username" placeholder="username" required/><br><br>
-			<!-- validating input into text field is as expected-->
-			<?php
-			if (isset($_POST['username']))
-			$username = stripslashes(trim($_POST['username']));{
-			function clean($string) {
-				$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
-				return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-			};
-			$username = mysql_real_escape_string( $username );
-			?>
 			<label>Email:</label><br>
 			<input type="email" name="email" placeholder="email" required />  <br><br>
-			<!-- validate email address formatting is a valid construction-->
-			<?php
-			if(isset($_POST['email']))
-			$email = trim($_POST['email']);
-			$email = mysql_real_escape_string( $email );
-			?>
 			<label>Password:</label><br>
 			<input type="password" name="password" placeholder="password" required/>  <br><br>
-			<!-- validate that password construction is a format required-->
-			<?php
-			if(isset($_POST['password'])) 
-				$password = stripslashes(trim($_POST['password']));
-			function clean($string) {
-				$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
-				return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-			}
-			$password = mysql_real_escape_string( $password );
-			?>
 			<input type="submit" name="submit" value="Register!" />
 		</form>
 		<div class="error"><?php echo $msg;?></div>
